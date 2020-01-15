@@ -1,0 +1,16 @@
+{
+  "name": "grpc-bank",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "node server.js && node client.js"
+  },
+  "keywords": [],
+  "author": "Dylan Steele",
+  "license": "MIT",
+  "dependencies": {
+    "grpc-test": "git+https://github.com/dills122/grpc-playground.git"
+  }
+}
