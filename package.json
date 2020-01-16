@@ -11,6 +11,7 @@
   "author": "Dylan Steele",
   "license": "MIT",
   "dependencies": {
-    "grpc-test": "git+https://github.com/dills122/grpc-playground.git"
+    "grpc-test": "git+https://github.com/dills122/grpc-playground.git",
+    "uuid": "^3.3.3"
   }
 }

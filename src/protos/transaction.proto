@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package grpcBank;
+
+service Transaction {
+    rpc Create (PostTransactionRequest) returns (Transaction) {}
+    rpc GetAll (AccountInfo) returns (Transactions) {}
+    rpc Get (TransactionId) returns (Transaction) {}
+}
+
+message TransactionId {
+    string transactionId = 1;
+}
+
+message AccountInfo {
+    string bankId = 1;
+}
+
+message Transaction {
+    int32 bankId = 1;
+    string transactionId = 2;
+    float amount = 3;
+    string postDate = 4;
+}
+
+message PostTransactionRequest {
+    int32 bankId = 1;
+    float amount = 2;
+    string postDate = 3;
+}
+
+message Transactions {
+    repeated Transaction transactions = 1;
+}
