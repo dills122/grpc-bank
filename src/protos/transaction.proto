@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package grpcBank;
 
+import "/transaction-schema.proto";
+
 service TransactionService {
     rpc Create (PostTransactionRequest) returns (Transaction) {}
     rpc GetAll (AccountInfo) returns (Transactions) {}
@@ -17,15 +19,8 @@ message AccountInfo {
     string bankId = 1;
 }
 
-message Transaction {
-    int32 bankId = 1;
-    string transactionId = 2;
-    float amount = 3;
-    string postDate = 4;
-}
-
 message PostTransactionRequest {
-    int32 bankId = 1;
+    string bankId = 1;
     float amount = 2;
     string postDate = 3;
 }
