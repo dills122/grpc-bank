@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package grpcBank;
+
+service BankAccount {
+    rpc Create (NewAccountRequest) returns (NewAccountResponse) {}
+    rpc UpdateBalance (UpdateBalanceRequest) returns (AccountRecord) {}
+    rpc Archive (RetrieveAccountRequest) returns () {}
+}
+
+message NewAccountRequest {
+    int32 clientId = 1;
+    float beginningBalance = 2;
+}
+
+message NewAccountResponse {
+    int32 clientId = 1;
+    string bankId = 2;
+    float balance = 3;
+}
+
+message AccountRecord {
+    int32 clientId = 1;
+    string bankId = 2;
+    float balance = 3;
+    repeated Transaction transactions = 4; 
+}
+
+message RetrieveAccountRequest {
+    int32 clientId = 1;
+    string bankId = 2;
+}
+
+message ArchivedResponse {
+    string bankId = 1;
+}
+
+message Transaction {
+    string bankId = 1;
+    string transactionId = 2;
+    float amount = 3;
+    string postDate = 4;
+}
+
+message UpdateBalanceRequest {
+    string bankId = 1;
+    int32 clientId = 2;
+    float amount = 3;
+}
