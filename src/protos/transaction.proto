@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpcBank;
 
-service Transaction {
+service TransactionService {
     rpc Create (PostTransactionRequest) returns (Transaction) {}
     rpc GetAll (AccountInfo) returns (Transactions) {}
     rpc Get (TransactionId) returns (Transaction) {}
@@ -10,6 +10,7 @@ service Transaction {
 
 message TransactionId {
     string transactionId = 1;
+    string bankId = 2;
 }
 
 message AccountInfo {

@@ -25,5 +25,8 @@ module.exports = {
       let { clientId, bankId} = call.request;
       //Add logic for firebase
       return callback();
+  },
+  Get: (call, callback) => {
+    return callback(); 
   }
 };

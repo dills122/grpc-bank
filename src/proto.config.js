@@ -3,28 +3,28 @@ const protoDefinitionPath = "protos";
 module.exports = {
     protoDefinitionPath,
     Services: {
-        Greeter: {
+        GreeterService: {
             protoPath: globalFilePaths('/greeter.proto'),
             namespace: 'helloworld',
-            serviceName: 'Greeter',
+            serviceName: 'GreeterService',
             serviceDefinitions: require("./service-definitions/greeter.service")
         },
-        BankAccount: {
+        BankAccountService: {
             protoPath: globalFilePaths("/bank-account.proto"),
             namespace: "grpcBank",
-            serviceName: "BankAccount",
+            serviceName: "BankAccountService",
             serviceDefinitions: require("./service-definitions/bank-account.service")
         },
-        Client: {
+        ClientService: {
             protoPath: globalFilePaths("/client.proto"),
             namespace: "grpcBank",
-            serviceName: "Client",
+            serviceName: "ClientService",
             serviceDefinitions: require("./service-definitions/client.service")
         },
-        Transaction: {
+        TransactionService: {
             protoPath: globalFilePaths("/transaction.proto"),
             namespace: "grpcBank",
-            serviceName: "Transaction",
+            serviceName: "TransactionService",
             serviceDefinitions: require("./service-definitions/transaction.service")
         }
     },

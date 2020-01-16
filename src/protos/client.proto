@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpcBank;
 
-service Client {
+service ClientService {
     rpc Create (NewClientRequest) returns (NewClientReply) {}
     rpc Get (ClientRequest) returns (ClientRecord) {}
     rpc Archive (ClientRequest) returns (ClientRequest) {}
@@ -15,16 +15,16 @@ message NewClientRequest {
 }
 
 message NewClientReply {
-    int32 clientId = 1;
+    string clientId = 1;
     string firstName =2;
 }
 
 message ClientRequest {
-    int32 clientId = 1;
+    string clientId = 1;
 }
 
 message ClientRecord {
-    int32 clientId = 1;
+    string clientId = 1;
     string firstName = 2;
     string lastName = 3;
     string city = 4;
