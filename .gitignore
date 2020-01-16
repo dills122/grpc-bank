@@ -61,6 +61,7 @@ typings/
 .next
 
 firebase.config.js
+grpc-bank-firebase-adminsdk-muoa2-f68a698bdf.json
 
 package-lock.json
 yarn.lock

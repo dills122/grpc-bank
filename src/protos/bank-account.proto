@@ -2,10 +2,11 @@ syntax = "proto3";
 
 package grpcBank;
 
-service BankAccount {
+service BankAccountService {
     rpc Create (NewAccountRequest) returns (NewAccountResponse) {}
     rpc UpdateBalance (UpdateBalanceRequest) returns (AccountRecord) {}
-    rpc Archive (RetrieveAccountRequest) returns () {}
+    rpc Archive (RetrieveAccountRequest) returns (Empty) {}
+    rpc Get (RetrieveAccountRequest) returns (AccountRecord) {}
 }
 
 message NewAccountRequest {
@@ -47,3 +48,5 @@ message UpdateBalanceRequest {
     int32 clientId = 2;
     float amount = 3;
 }
+
+message Empty {}
