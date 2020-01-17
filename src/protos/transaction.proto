@@ -2,13 +2,15 @@ syntax = "proto3";
 
 package grpcBank;
 
-import "/transaction-schema.proto";
+import "transaction-schema.proto";
+import "empty-schema.proto";
 
 service TransactionService {
     rpc Create (PostTransactionRequest) returns (Transaction) {}
     rpc GetAll (AccountInfo) returns (Transactions) {}
     rpc Get (TransactionId) returns (Transaction) {}
 }
+
 
 message TransactionId {
     string transactionId = 1;

@@ -59,7 +59,7 @@ function CreateAndGetClient(client, callback) {
                 return cb();
             })
         }
-    ], (err, result) => {
+    ], (err) => {
         if (err) {
             console.log(err);
             return callback(err);
