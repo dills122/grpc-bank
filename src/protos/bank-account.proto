@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package grpcBank;
 
-import "/transaction-schema.proto";
-import "/empty-schema.proto";
+import "transaction-schema.proto";
+import "empty-schema.proto";
 
 service BankAccountService {
     rpc Create (NewAccountRequest) returns (NewAccountResponse) {}

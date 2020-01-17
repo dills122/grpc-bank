@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package grpcBank;
+
 message Transaction {
     string bankId = 1;
     string transactionId = 2;
